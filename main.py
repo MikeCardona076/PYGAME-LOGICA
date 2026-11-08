@@ -21,7 +21,16 @@ while running:
     # fill the screen with a color to wipe away anything from last frame
     screen.fill("black")
 
-    # RENDER YOUR GAME HERE
+    # CARGAR UNA CANCION Y REPRODUCIRLA
+    try:
+        pygame.mixer.music.load('Media\mikesonido.mp3')
+        print("Música cargada correctamente.")
+        pygame.mixer.music.play()
+        print("Reproduciendo...")
+    except pygame.error as e:
+        print(f"No se pudo cargar el archivo de música: {e}")
+
+
 
     # flip() the display to put your work on screen
     pygame.display.flip()
